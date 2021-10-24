@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular Timer';
+  timerName='Timer';
   // timeSec: number = 0;
   interval: any;
   time = new Date(+0);
@@ -37,5 +38,13 @@ export class AppComponent {
   stopTimer() {
 
     this.saveTime.getTime(this.interval);
+  }
+
+  addTimer(){
+
+  }
+
+  renameTimer(){
+
   }
 }
