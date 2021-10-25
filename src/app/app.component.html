@@ -3,6 +3,10 @@
   <img height="50" width="50" src="https://cdn-icons-png.flaticon.com/512/149/149865.png" />
   <span>Welcome to {{title}}!</span>
   <div class="spacer"></div>
+  <a aria-label="Github repository" target="_blank" rel="noopener" href="https://github.com/HadasIsraeli/angular-timer"
+    title="Github repository">
+    <img height="50" width="50" src="https://cdn-icons-png.flaticon.com/512/865/865152.png" />
+  </a>
   <a aria-label="Hadas Israeli Github" target="_blank" rel="noopener" href="https://github.com/HadasIsraeli"
     title="Hadas Israeli's Github">
     <img height="50" width="50" src="https://cdn-icons-png.flaticon.com/512/733/733609.png" />
@@ -17,6 +21,7 @@
 
   <div class="card highlight-card card-small">
     <span>{{timerName}}</span>
+    <div class="spacer"></div>
     <button (click)='renameTimer()'>Rename Timer</button>
   </div>
 
@@ -31,7 +36,7 @@
     <cd-timer #basicTimer></cd-timer>
   </div> -->
   <div class="card">
-    <p>{{time.toISOString().substr(11,8)}}</p>
+    <p>{{time.toTimeString().substr(0,8)}}</p>
   </div>
   <div class="card highlight-card card-small">
     <button (click)='startTimer()'>Start Timer</button>
@@ -43,7 +48,7 @@
   <div class="card highlight-card card-small">
     <button (click)='addTimer()'>Add Timer</button>
   </div>
-<!-- 
+  <!-- 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
     <path id="Path_39" data-name="Path 39"
@@ -55,5 +60,6 @@
 
 <div class="card highlight-card card-small">
   <span>History</span>
-  <!-- <button (click)='renameTimer()'>History</button> -->
+  <div class="spacer"></div>
 </div>
+<!-- <p class="personaType">{{history[0].name}} {{history[0].timeSavedAt}} {{history[0].stopedAt}}</p> -->
