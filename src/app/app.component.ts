@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'Angular Timer';
   timerName = 'Timer';
@@ -32,19 +33,21 @@ export class AppComponent {
     this.endSavedTime = new Date();
     this.history.push({
       name: this.timerName,
-      timeStartedAt: this.startSavedTime.toString().substr(0,25),
+      timeStartedAt: this.startSavedTime.toString().substr(0, 25),
       timeStopedAt: this.endSavedTime.toTimeString().substr(0, 8),
       timerStatus: this.time.toTimeString().substr(0, 8)
     });
     this.resetTimer();
     this.pauseTimer();
+    this.timerName = 'Timer';
   }
 
   addTimer() {
 
   }
 
-  renameTimer() {
-
+  renameTimer(val: string) {
+    this.timerName = val;
   }
+
 }

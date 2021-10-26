@@ -20,12 +20,12 @@
 <div class="content" role="main">
 
   <div class="card highlight-card card-small">
-    <span>{{timerName}}</span>
+    <p>{{timerName}}</p>
     <div class="spacer"></div>
-
-    <button (click)='renameTimer()'>Rename Timer</button>
   </div>
-
+  <button (click)='renameTimer(box.value)'>Rename Timer</button>
+  <input type="text" #box placeholder="Enter Timer Name" name="Timer" />
+  <br />
   <input type="hidden" #selection>
 
   <div class="card">
@@ -34,8 +34,8 @@
   <div class="card highlight-card card-small">
     <button (click)='startTimer()'>Start Timer</button>
     <button (click)='pauseTimer()'>Pause</button>
-    <button (click)='resetTimer()'>reset</button>
-    <button (click)='stopTimer()'>stop</button>
+    <button (click)='resetTimer()'>Reset</button>
+    <button (click)='stopTimer()'>Stop</button>
   </div>
 
   <div class="card highlight-card card-small">
@@ -56,5 +56,6 @@
   <div class="spacer"></div>
 </div>
 <tr *ngFor="let history1 of history; let i = index">
-  <td class="td">{{history[i].name}}, {{history[i].timeStartedAt}} - {{history[i].timeStopedAt}} --> {{history[i].timerStatus}}</td>
+  <td class="td">{{history[i].name}}, {{history[i].timeStartedAt}} - {{history[i].timeStopedAt}} -->
+    {{history[i].timerStatus}}</td>
 </tr>
