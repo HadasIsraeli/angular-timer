@@ -34,12 +34,13 @@ export class AppComponent {
     console.log('saved: ' + this.savedTime.toTimeString());
     this.history.push({
       name: this.timerName,
-      timeSavedAt: this.savedTime.toTimeString(),
+      timeSavedAt: this.savedTime.toString().substr(0,25),
       stopedAt: this.time.toTimeString().substr(0, 8)
     });
-    // console.log('history: ' + this.history[0].name + this.history[0].stopedAt + this.history[0].timeSavedAt);
+    console.log('history: ' + this.history[0].name + this.history[0].stopedAt + this.history[0].timeSavedAt);
 
     this.resetTimer();
+    this.pauseTimer();
   }
 
   addTimer() {

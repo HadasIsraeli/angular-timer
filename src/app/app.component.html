@@ -22,19 +22,12 @@
   <div class="card highlight-card card-small">
     <span>{{timerName}}</span>
     <div class="spacer"></div>
+
     <button (click)='renameTimer()'>Rename Timer</button>
   </div>
 
   <input type="hidden" #selection>
-  <!-- <div>
-    <h3>timer 1:</h3>
-    <cd-timer format="hms"></cd-timer>
-  </div> -->
 
-  <!-- <div>
-    <h3>timer 2:</h3>
-    <cd-timer #basicTimer></cd-timer>
-  </div> -->
   <div class="card">
     <p>{{time.toTimeString().substr(0,8)}}</p>
   </div>
@@ -62,4 +55,6 @@
   <span>History</span>
   <div class="spacer"></div>
 </div>
-<!-- <p class="personaType">{{history[0].name}} {{history[0].timeSavedAt}} {{history[0].stopedAt}}</p> -->
+<tr *ngFor="let history1 of history; let i = index">
+  <td class="td">{{history[i].name}}, {{history[i].timeSavedAt}} -> {{history[i].stopedAt}}</td>
+</tr>
