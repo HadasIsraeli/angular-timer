@@ -10,8 +10,9 @@ export class AppComponent {
   timerName = 'Timer';
   interval: any;
   time = new Date('October 16, 2021 00:00:00');
-  savedTime = new Date();
-  history: Array<{ name: string, timeSavedAt: string, stopedAt: string }> = [];
+  startSavedTime = new Date();
+  endSavedTime = new Date();
+  history: Array<{ name: string, timeStartedAt: string, timeStopedAt: string, timerStatus: string }> = [];
 
   startTimer() {
     this.interval = setInterval(() => {
@@ -28,17 +29,13 @@ export class AppComponent {
   }
 
   stopTimer() {
-    this.savedTime = new Date();
-    console.log(this.time.getHours() + ":" + this.time.getMinutes() + ":" + this.time.getSeconds());
-    console.log('time: ' + this.time.toTimeString().substr(0, 8));
-    console.log('saved: ' + this.savedTime.toTimeString());
+    this.endSavedTime = new Date();
     this.history.push({
       name: this.timerName,
-      timeSavedAt: this.savedTime.toString().substr(0,25),
-      stopedAt: this.time.toTimeString().substr(0, 8)
+      timeStartedAt: this.startSavedTime.toString().substr(0,25),
+      timeStopedAt: this.endSavedTime.toTimeString().substr(0, 8),
+      timerStatus: this.time.toTimeString().substr(0, 8)
     });
-    console.log('history: ' + this.history[0].name + this.history[0].stopedAt + this.history[0].timeSavedAt);
-
     this.resetTimer();
     this.pauseTimer();
   }

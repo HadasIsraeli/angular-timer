@@ -56,5 +56,5 @@
   <div class="spacer"></div>
 </div>
 <tr *ngFor="let history1 of history; let i = index">
-  <td class="td">{{history[i].name}}, {{history[i].timeSavedAt}} -> {{history[i].stopedAt}}</td>
+  <td class="td">{{history[i].name}}, {{history[i].timeStartedAt}} - {{history[i].timeStopedAt}} --> {{history[i].timerStatus}}</td>
 </tr>
