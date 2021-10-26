@@ -50,4 +50,7 @@ export class AppComponent {
     this.timerName = val;
   }
 
+  exportexcel() {
+
+  }
 }
