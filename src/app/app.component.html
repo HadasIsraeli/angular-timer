@@ -18,28 +18,24 @@
 </div>
 
 <div class="content" role="main">
+  <div class="timer-card">
+    <div class="card highlight-card card-small">
+      <p>{{timerName}}</p>
+    </div>
+    <button (click)='renameTimer(box.value)'>Rename Timer</button>
+    <input type="text" #box placeholder="Enter Timer Name" name="Timer" />
+    <br />
+    <input type="hidden" #selection>
 
-  <div class="card highlight-card card-small">
-    <p>{{timerName}}</p>
-    <div class="spacer"></div>
-  </div>
-  <button (click)='renameTimer(box.value)'>Rename Timer</button>
-  <input type="text" #box placeholder="Enter Timer Name" name="Timer" />
-  <br />
-  <input type="hidden" #selection>
-
-  <div class="card">
-    <p>{{time.toTimeString().substr(0,8)}}</p>
-  </div>
-  <div class="card highlight-card card-small">
-    <button (click)='startTimer()'>Start Timer</button>
-    <button (click)='pauseTimer()'>Pause</button>
-    <button (click)='resetTimer()'>Reset</button>
-    <button (click)='stopTimer()'>Stop</button>
-  </div>
-
-  <div class="card highlight-card card-small">
-    <button (click)='addTimer()'>Add Timer</button>
+    <div class="card">
+      <p>{{time.toTimeString().substr(0,8)}}</p>
+    </div>
+    <div class="card highlight-card card-small">
+      <button (click)='startTimer()'>Start Timer</button>
+      <button (click)='pauseTimer()'>Pause</button>
+      <button (click)='resetTimer()'>Reset</button>
+      <button (click)='stopTimer()'>Stop</button>
+    </div>
   </div>
 </div>
 
@@ -51,11 +47,6 @@
 </div>
 
 <div>
-  <th>Name | Date | Start Time - Stop Time | Timer Status</th>
-  <tr *ngFor="let history1 of history; let i = index">
-    <td class="td">{{history[i].name}}, {{history[i].date}}, {{history[i].timeStartedAt}} - {{history[i].timeStopedAt}}
-      | {{history[i].timerStatus}}</td>
-  </tr>
 
   <table id="excel-table">
     <tr>
